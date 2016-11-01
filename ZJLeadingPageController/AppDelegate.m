@@ -21,6 +21,8 @@
     
     // 如果是第一次安装打开App --- 显示引导页面
     ZJLeadingPageController *leadController = [[ZJLeadingPageController alloc] initWithPagesCount:5 setupCellHandler:^(ZJLeadingPageCell *cell, NSIndexPath *indexPath) {
+        
+        // 设置图片
         NSString *imageName = [NSString stringWithFormat:@"wangyiyun%ld",indexPath.row];
         cell.imageView.image = [UIImage imageNamed:imageName];
 
@@ -31,6 +33,7 @@
     } finishHandler:^(UIButton *finishBtn) {
         NSLog(@"点击了完成按钮-----");
     }];
+    // 自定义属性
     leadController.pageControl.pageIndicatorTintColor = [UIColor yellowColor];
     leadController.pageControl.currentPageIndicatorTintColor = [UIColor purpleColor];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
